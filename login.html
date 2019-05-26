@@ -44,18 +44,11 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        aria-haspopup="true" aria-expanded="false">My Account</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="My Profile">Profile</a>
+                        <a class="dropdown-item" href="Log Out">Log Out</a>
                     </div>
-                </li>
-                <li class="nav-item avatar">
-                    <a class="nav-link p-0" href="#">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg"
-                            class="rounded-circle z-depth-0" alt="avatar image" height="35">
-                    </a>
                 </li>
             </ul>
             <!-- Links -->
@@ -67,7 +60,7 @@
     <div class="container">
         <hr />
         <!-- Content here -->
-        <form class="border border-light p-5">
+        <form action="javascript:loginNew();" method="POST" class="border border-light p-5">
             <p class="h4 mb-4 text-center">Login</p>
             <input type="email" id="LoginFormEmail" class="form-control mb-4" placeholder="E-mail">
             <input type="password" id="LoginFormPassword" class="form-control mb-4" placeholder="Password">
@@ -106,6 +99,7 @@
         function loginNew() {
             const email = $('#LoginFormEmail').val()
             const password = $('#LoginFormPassword').val()
+            console.log('pilat')
             LoginUser(email, password)
         }
     </script>
