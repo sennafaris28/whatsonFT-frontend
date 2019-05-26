@@ -1,13 +1,14 @@
-function RegisterUser(name, username, department, password, email) {
+function RegisterUser(name, username, department, email, password) {
     $.ajax({
-        url: proxy + "/users/register",
+        url: "http://localhost:8080/users/register",
         type: "POST",
-        data: { name, username, department, password, email },
+        data: { name, username, department, email, password },
         success: function (data, status, jqXHR) {
             alert("Registered Successfully ! ")
             window.location.href = "login.html"
         },
         error: function (jqXHR, status, errorThrown) {
+            console.log(jqXHR)
             alert("Registration Failed :(")
         },
         dataType: "JSON",
@@ -17,7 +18,7 @@ function RegisterUser(name, username, department, password, email) {
 
 function LoginUser(email, password) {
     $.ajax({
-        url: proxy + "/users/login",
+        url: "http://localhost:8080/users/login",
         type: "POST",
         data: { email, password },
         success: function (data, status, jqXHR) {
@@ -25,6 +26,7 @@ function LoginUser(email, password) {
             window.location.href = "events.html"
         },
         error: function (jqXHR, status, errorThrown) {
+            console.log(jqXHR)
             alert("Login Failed :(")
         },
         dataType: "JSON",

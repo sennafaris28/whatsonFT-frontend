@@ -67,13 +67,14 @@
     <div class="container">
         <hr />
         <!-- Content here -->
-        <form class="border border-light p-5">
+        <form action="javascript:registerNew();" method="POST" class="border border-light p-5">
             <p class="h4 mb-4 text-center">Register</p>
             <input type="text" id="RegisterFormName" class="form-control" placeholder="Name">
             <input type="text" id="RegisterFormUsername" class="form-control" placeholder="Username">
+            <input type="email" id="RegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
             <input type="password" id="RegisterFormPassword" class="form-control" placeholder="Password"
                 aria-describedby="defaultRegisterFormPasswordHelpBlock">
-            <input type="email" id="RegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
             <select class="browser-default custom-select mb-4" id="RegisterFormDepartment">
                 <option value="" disabled="" selected="">Choose your department</option>
                 <option value="DTS">Departemen Teknik Sipil</option>
@@ -115,7 +116,7 @@
     <script>
         function registerNew() {
             const name = $('#RegisterFormName').val()
-            const username = $('#RegisterFormUserame').val()
+            const username = $('#RegisterFormUsername').val()
             const department = $('#RegisterFormDepartment').val()
             const email = $('#RegisterFormEmail').val()
             const password = $('#RegisterFormPassword').val()
