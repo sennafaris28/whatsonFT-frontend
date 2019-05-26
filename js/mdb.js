@@ -4,22 +4,22 @@
  *
  *
  * Copyright: Material Design for Bootstrap
- * https://mdbootstrap.com/
+ * https://MDBootstrap.com/
  *
- * Read the license: https://mdbootstrap.com/general/license/
+ * Read the license: https://MDBootstrap.com/general/license/
  *
  *
- * Documentation: https://mdbootstrap.com/
+ * Documentation: https://MDBootstrap.com/
  *
- * Getting started: https://mdbootstrap.com/docs/jquery/getting-started/download/
+ * Getting started: https://MDBootstrap.com/docs/jquery/getting-started/download/
  *
- * Tutorials: https://mdbootstrap.com/education/bootstrap/
+ * Tutorials: https://MDBootstrap.com/education/bootstrap/
  *
- * Templates: https://mdbootstrap.com/templates/
+ * Templates: https://MDBootstrap.com/templates/
  *
- * Support: https://mdbootstrap.com/forums/forum/support/
+ * Support: https://MDBootstrap.com/forums/forum/support/
  *
- * Contact: office@mdbootstrap.com
+ * Contact: office@MDBootstrap.com
  *
  * Attribution: Animate CSS, Twitter Bootstrap, Materialize CSS, Normalize CSS, Waves JS, WOW JS, Toastr, Chart.jss
  *
@@ -15711,8 +15711,8 @@ var _this = void 0;
 })(jQuery);
 /*
     Enhanced Bootstrap Modals
-    https://mdbootstrap.com
-    office@mdbootstrap.com
+    https://MDBootstrap.com
+    office@MDBootstrap.com
 */
 
 (function($){

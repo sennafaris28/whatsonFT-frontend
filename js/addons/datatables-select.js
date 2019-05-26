@@ -1,7 +1,7 @@
 /*
  * MDBootstrap integration with Datatables
- * Learn more: https://mdbootstrap.com/docs/jquery/tables/datatables/
- * About MDBootstrap: https://mdbootstrap.com/
+ * Learn more: https://MDBootstrap.com/docs/jquery/tables/datatables/
+ * About MDBootstrap: https://MDBootstrap.com/
  *
  * Select for DataTables 1.2.7
  * 2015-2018 SpryMedia Ltd - datatables.net/license/mit

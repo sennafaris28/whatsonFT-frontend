@@ -1,7 +1,7 @@
 /*
     Enhanced Bootstrap Modals
-    https://mdbootstrap.com
-    office@mdbootstrap.com
+    https://MDBootstrap.com
+    office@MDBootstrap.com
 */
 
 (function($){

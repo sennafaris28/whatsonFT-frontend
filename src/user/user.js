@@ -1,6 +1,6 @@
 function RegisterUser(name, username, department, email, password) {
     $.ajax({
-        url: "http://localhost:8080/users/register",
+        url: proxy + "/users/register",
         type: "POST",
         data: { name, username, department, email, password },
         success: function (data, status, jqXHR) {
@@ -18,7 +18,7 @@ function RegisterUser(name, username, department, email, password) {
 
 function LoginUser(email, password) {
     $.ajax({
-        url: "http://localhost:8080/users/login",
+        url: proxy + "/users/login",
         type: "POST",
         data: { email, password },
         success: function (data, status, jqXHR) {
@@ -33,3 +33,4 @@ function LoginUser(email, password) {
         timeout: 5000
     })
 }
+

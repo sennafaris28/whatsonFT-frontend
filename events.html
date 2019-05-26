@@ -14,10 +14,11 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <!--Navbar-->
+    <!-- Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark special-color-dark">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="index.html">What's on FT ?</a>
@@ -44,16 +45,15 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        aria-haspopup="true" aria-expanded="false">Profile</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">My Profile</a>
+                        <button class="btn btn-danger" onclick="logOut()">Logout</button>
                     </div>
                 </li>
                 <li class="nav-item avatar">
-                    <a class="nav-link p-0" href="#">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg"
+                    <a class="nav-link p-0" href="profile.html">
+                        <img src="https://MDBootstrap.com/img/Photos/Avatars/avatar-1.jpg"
                             class="rounded-circle z-depth-0" alt="avatar image" height="35">
                     </a>
                 </li>
@@ -62,11 +62,25 @@
         </div>
         <!-- Collapsible content -->
     </nav>
-    <!--/.Navbar-->
+    <!-- Navbar End -->
     <!-- Content -->
     <div class="container">
         <!-- Content here -->
         <h1 id='Greeter' style="text-align: center">Welcome aboard !</h1>
+        <ul class="list-group" id="events">
+            <!-- <li class="list-group-item">
+                <h1>Lorem</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam amet placeat quos tempore sapiente
+                    quis
+                    cupiditate quibusdam laboriosam? Perspiciatis dolorum facilis neque tenetur eveniet esse vitae est
+                    laborum suscipit rem!</p>
+                <a href="#" class="btn btn-mdb-color">Attend</a>
+            </li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li> -->
+        </ul>
     </div>
     <!-- Content End -->
 
@@ -83,12 +97,13 @@
     <footer class="page-footer font-small special-color-dark fixed-bottom">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            <a href="https://MDBootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
 
     </footer>
     <!-- Footer -->
+    <script src="src/config.js"></script>
     <script>
         // Show username on greeting message
         let username = JSON.parse(localStorage.getItem("userInfo"))
@@ -97,6 +112,58 @@
             $('#Greeter').html('<h1> Welcome ' + username.name + ' !</h1>')
         })
     </script>
+
+    <script>
+        let $events = $('#events');
+        $.ajax({
+            url: proxy + "/events",
+            type: "GET",
+            success: function (events) {
+                console.log(events)
+                $.each(events, function (i, event) {
+                    $events.append(
+                        `<li class="list-group-item">
+                            <h1>` + event.name + `</h1>
+                            <h4>` + event.date + `</h4>
+                            <p>` + event.description + `</p>
+                            <a href="#" class="btn btn-mdb-color">Attend</a>
+                        </li>`
+                    );
+                })
+                //     < li class="list-group-item" >
+                //             <h1>Lorem</h1>
+                //             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam amet placeat quos tempore sapiente
+                //                 quis
+                //                 cupiditate quibusdam laboriosam? Perspiciatis dolorum facilis neque tenetur eveniet esse vitae est
+                //         laborum suscipit rem!</p>
+                //             <a href="#" class="btn btn-mdb-color">Attend</a>
+                // </li >
+            },
+            error: function (jqXHR, status, errorThrown) {
+                console.log(jqXHR)
+            },
+            dataType: "JSON",
+            timeout: 5000
+        })
+    </script>
+    <script>
+        const user = localStorage.getItem("userInfo")
+        if (user === null || typeof user === 'undefined') {
+            window.location.href = 'login.html'
+        }
+    </script>
+    <!-- Logout -->
+    <script>
+        function logOut() {
+            localStorage.removeItem("userInfo")
+            alert("Logged Out")
+            window.location.href = "index.html"
+        }
+    </script>
+    <script>
+
+    </script>
+
 
 </body>
 
